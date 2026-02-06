@@ -1,42 +1,37 @@
 @import "tailwindcss";
 
 :root {
-  /* Core */
-  --lb-ink: 15 23 42;        /* #0F172A */
-  --lb-navy: 11 31 58;       /* #0B1F3A */
-  --lb-cloud: 245 247 251;   /* #F5F7FB */
+  /* === Lunchbox League — Warm, Human Design System === */
 
-  /* Hero accents */
-  --lb-violet: 123 97 255;   /* #7B61FF */
-  --lb-sky: 125 211 252;     /* #7DD3FC */
-  --lb-mint: 52 211 153;     /* #34D399 */
-  --lb-sun: 255 200 87;      /* #FFC857 */
+  /* Core palette */
+  --ll-cream: #FFF8F0;
+  --ll-cream-dark: #F3EBE1;
+  --ll-navy: #1B2D4F;
+  --ll-navy-light: #2A4170;
+  --ll-amber: #F5A623;
+  --ll-amber-light: #FFF3DC;
+  --ll-coral: #E8573A;
+  --ll-coral-light: #FDEBE7;
+  --ll-sage: #4A9B6E;
+  --ll-sage-light: #E8F5ED;
+  --ll-sky: #6CB4D9;
+  --ll-sky-light: #E7F3FB;
+  --ll-ink: #2D2A26;
+  --ll-muted: #8A8580;
+  --ll-border: #E8E0D8;
 
-  /* Semantics */
-  --lb-safe: 34 197 94;      /* #22C55E */
-  --lb-caution: 245 158 11;  /* #F59E0B */
-  --lb-danger: 239 68 68;    /* #EF4444 */
-
-  /* Surfaces */
-  --lb-bg: var(--lb-cloud);
-  --lb-fg: var(--lb-ink);
-
-  --lb-card: 255 255 255;
-  --lb-border: 226 232 240; /* slate-200 */
-
-  --lb-radius-lg: 22px;
-  --lb-radius-md: 16px;
-
-  --lb-shadow: 0 18px 50px rgba(11, 31, 58, 0.12);
-  --lb-shadow-tight: 0 10px 22px rgba(11, 31, 58, 0.14);
+  /* Semantic */
+  --ll-danger: #D93025;
+  --ll-caution: #D4940A;
+  --ll-safe: #2D8E5E;
 }
 
-/* Emergency mode: force clinical clarity */
-[data-mode="emergency"] {
-  --lb-bg: 255 255 255;
-  --lb-card: 255 255 255;
-  --lb-border: 203 213 225; /* slate-300 */
-  --lb-shadow: 0 0 0 rgba(0,0,0,0);
+/* --------------------------------------------------------
+   Base
+   -------------------------------------------------------- */
+
+html {
+  scroll-behavior: smooth;
 }
 
 html, body {
@@ -44,21 +39,181 @@ html, body {
 }
 
 body {
-  background: rgb(var(--lb-bg));
-  color: rgb(var(--lb-fg));
+  background: var(--ll-cream);
+  color: var(--ll-ink);
+  font-family: var(--font-body);
 }
 
-/* A tiny grain to avoid “flat SaaS” */
-.lb-grain {
+/* --------------------------------------------------------
+   Section spacing
+   -------------------------------------------------------- */
+
+.ll-section {
+  padding: 5rem 0;
+}
+
+@media (min-width: 768px) {
+  .ll-section {
+    padding: 7rem 0;
+  }
+}
+
+/* --------------------------------------------------------
+   Card — warm paper, not glass
+   -------------------------------------------------------- */
+
+.ll-card {
+  background: #FFFCF7;
+  border: 1.5px solid var(--ll-border);
+  border-radius: 16px;
+  box-shadow:
+    0 1px 3px rgba(45, 42, 38, 0.04),
+    0 8px 24px rgba(45, 42, 38, 0.03);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.ll-card-hover:hover {
+  box-shadow:
+    0 2px 6px rgba(45, 42, 38, 0.06),
+    0 16px 40px rgba(45, 42, 38, 0.07);
+  transform: translateY(-3px);
+}
+
+/* --------------------------------------------------------
+   Typography
+   -------------------------------------------------------- */
+
+.ll-heading-xl {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+  color: var(--ll-navy);
+}
+
+@media (min-width: 768px) {
+  .ll-heading-xl {
+    font-size: 3.5rem;
+  }
+}
+
+.ll-heading-lg {
+  font-family: var(--font-display);
+  font-size: 1.875rem;
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+  font-weight: 400;
+  color: var(--ll-navy);
+}
+
+@media (min-width: 768px) {
+  .ll-heading-lg {
+    font-size: 2.5rem;
+  }
+}
+
+.ll-body {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ll-muted);
+}
+
+/* (squiggle decoration removed) */
+
+/* --------------------------------------------------------
+   Buttons
+   -------------------------------------------------------- */
+
+.ll-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: var(--ll-navy);
+  color: white;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(27, 45, 79, 0.2);
+}
+
+.ll-btn-primary:hover {
+  background: var(--ll-navy-light);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(27, 45, 79, 0.25);
+}
+
+.ll-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: var(--ll-amber-light);
+  color: var(--ll-navy);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-radius: 12px;
+  border: 1.5px solid var(--ll-amber);
+  transition: all 0.2s ease;
+}
+
+.ll-btn-secondary:hover {
+  background: var(--ll-amber);
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------
+   Animations — subtle, purposeful
+   -------------------------------------------------------- */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out both;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out both;
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+
+/* --------------------------------------------------------
+   Paper grain — warm, subtle, organic
+   -------------------------------------------------------- */
+
+.ll-grain {
   position: relative;
 }
-.lb-grain::before {
+
+.ll-grain::before {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.08;
-  mix-blend-mode: multiply;
+  opacity: 0.025;
   background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)' opacity='.65'/%3E%3C/svg%3E");
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
 }

@@ -1,22 +1,24 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Bebas_Neue } from "next/font/google";
+import { DM_Serif_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
 
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
-  subsets: ["latin"],
-});
-
-const bebas = Bebas_Neue({
+const dmSerif = DM_Serif_Display({
   variable: "--font-display",
   subsets: ["latin"],
   weight: "400",
+  display: "swap",
+});
+
+const dmSans = DM_Sans({
+  variable: "--font-body",
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Lunchbox League — Mission-ready allergy safety",
+  title: "Lunchbox League — Allergy safety made simple for school",
   description:
-    "Turn allergy safety into a kid-powered mission: passports, pack checks, and an emergency plan you can share in seconds.",
+    "The app that helps parents share their child's food allergies, emergency plans, and safety info with teachers and caregivers — clearly and instantly.",
 };
 
 export default function RootLayout({
@@ -25,8 +27,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${jakarta.variable} ${bebas.variable}`}>
-      <body className="min-h-dvh antialiased lb-grain">
+    <html lang="en" className={`${dmSerif.variable} ${dmSans.variable}`}>
+      <body className="min-h-dvh antialiased ll-grain" style={{ fontFamily: 'var(--font-body)' }}>
         {children}
       </body>
     </html>
