@@ -157,9 +157,10 @@ export default function CTA() {
           method="GET"
           className="mx-auto mt-10 flex max-w-md flex-col gap-3 sm:flex-row animate-fade-up delay-100"
         >
+          <input type="hidden" name="subject" value="Lunchbox League — early access" />
           <input
             type="email"
-            name="subject"
+            name="body"
             placeholder="Your email address"
             required
             aria-label="Email address"

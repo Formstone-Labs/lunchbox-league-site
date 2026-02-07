@@ -67,7 +67,10 @@ function LunchboxLogo({ className = "h-9 w-9" }: { className?: string }) {
 
 export default function Nav() {
   return (
-    <nav className="sticky top-0 z-50 backdrop-blur-md">
+    <nav
+      className="sticky top-0 z-50 backdrop-blur-md"
+      style={{ background: "rgba(255, 248, 240, 0.82)" }}
+    >
       <div
         className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3"
       >
@@ -94,7 +97,7 @@ export default function Nav() {
             className="rounded-lg px-4 py-2 text-sm font-medium transition-colors hover:bg-[var(--ll-amber-light)]"
             style={{ color: "var(--ll-navy)" }}
           >
-            How It Works
+            How it works
           </Link>
           <Link
             href="#features"
