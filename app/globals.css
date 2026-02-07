@@ -45,17 +45,47 @@ body {
 }
 
 /* --------------------------------------------------------
+   Focus states — on-brand amber glow
+   -------------------------------------------------------- */
+
+:focus-visible {
+  outline: 2px solid var(--ll-amber);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 5px rgba(245, 166, 35, 0.18);
+  border-radius: 4px;
+}
+
+/* --------------------------------------------------------
    Section spacing
    -------------------------------------------------------- */
 
 .ll-section {
   padding: 5rem 0;
+  position: relative;
 }
 
 @media (min-width: 768px) {
   .ll-section {
     padding: 7rem 0;
   }
+}
+
+/* Soft gradient divider between stacked sections */
+.ll-section + .ll-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(80%, 600px);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--ll-border) 25%,
+    var(--ll-border) 75%,
+    transparent
+  );
 }
 
 /* --------------------------------------------------------
@@ -69,14 +99,15 @@ body {
   box-shadow:
     0 1px 3px rgba(45, 42, 38, 0.04),
     0 8px 24px rgba(45, 42, 38, 0.03);
-  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
 }
 
 .ll-card-hover:hover {
   box-shadow:
-    0 2px 6px rgba(45, 42, 38, 0.06),
-    0 16px 40px rgba(45, 42, 38, 0.07);
-  transform: translateY(-3px);
+    0 4px 12px rgba(245, 166, 35, 0.08),
+    0 20px 48px rgba(45, 42, 38, 0.10);
+  transform: translateY(-5px);
+  border-color: rgba(245, 166, 35, 0.3);
 }
 
 /* --------------------------------------------------------
@@ -87,8 +118,8 @@ body {
   font-family: var(--font-display);
   font-size: 2.5rem;
   line-height: 1.1;
-  letter-spacing: -0.01em;
-  font-weight: 400;
+  letter-spacing: -0.015em;
+  font-weight: 700;
   color: var(--ll-navy);
 }
 
@@ -102,8 +133,8 @@ body {
   font-family: var(--font-display);
   font-size: 1.875rem;
   line-height: 1.15;
-  letter-spacing: -0.005em;
-  font-weight: 400;
+  letter-spacing: -0.01em;
+  font-weight: 700;
   color: var(--ll-navy);
 }
 
@@ -119,7 +150,52 @@ body {
   color: var(--ll-muted);
 }
 
-/* (squiggle decoration removed) */
+/* Extra-large hero display text */
+.ll-display-hero {
+  font-family: var(--font-display);
+  font-size: 2.75rem;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  font-weight: 800;
+  color: var(--ll-navy);
+}
+
+@media (min-width: 768px) {
+  .ll-display-hero {
+    font-size: 4.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ll-display-hero {
+    font-size: 5rem;
+  }
+}
+
+/* Accent text — highlighted words that pop */
+.ll-accent-text {
+  color: var(--ll-amber);
+  font-weight: 700;
+  font-size: 1.05em;
+}
+
+/* Tagline — punchy, tracked, confident */
+.ll-tagline {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ll-amber);
+}
+
+/* Gradient text for hero headlines */
+.ll-text-gradient {
+  background: linear-gradient(135deg, var(--ll-navy) 0%, var(--ll-coral) 50%, var(--ll-amber) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 /* --------------------------------------------------------
    Buttons
@@ -136,14 +212,21 @@ body {
   font-weight: 600;
   font-size: 0.9375rem;
   border-radius: 12px;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
   box-shadow: 0 2px 8px rgba(27, 45, 79, 0.2);
+  position: relative;
 }
 
 .ll-btn-primary:hover {
   background: var(--ll-navy-light);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(27, 45, 79, 0.25);
+  transform: translateY(-2px);
+  box-shadow:
+    0 4px 16px rgba(27, 45, 79, 0.25),
+    0 0 20px rgba(245, 166, 35, 0.15);
+}
+
+.ll-btn-primary:active {
+  transform: translateY(0);
 }
 
 .ll-btn-secondary {
@@ -167,8 +250,57 @@ body {
   transform: translateY(-1px);
 }
 
+/* Hero button — amber-to-coral gradient, bold and warm */
+.ll-btn-hero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2.25rem;
+  background: linear-gradient(135deg, var(--ll-amber) 0%, var(--ll-coral) 100%);
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 14px;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow:
+    0 2px 8px rgba(232, 87, 58, 0.2),
+    0 8px 24px rgba(245, 166, 35, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.ll-btn-hero:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow:
+    0 4px 16px rgba(232, 87, 58, 0.3),
+    0 12px 32px rgba(245, 166, 35, 0.2);
+}
+
+.ll-btn-hero:active {
+  transform: translateY(0) scale(1);
+}
+
+/* Shimmer sweep on hero button */
+.ll-btn-hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: shimmer 3s ease-in-out infinite;
+}
+
 /* --------------------------------------------------------
-   Animations — subtle, purposeful
+   Keyframes — purposeful, joyful motion
    -------------------------------------------------------- */
 
 @keyframes fade-up {
@@ -187,6 +319,133 @@ body {
   to { opacity: 1; }
 }
 
+/* Gentle floating — like a balloon bobbing in air */
+@keyframes hero-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Shield pulse — protective glow that breathes */
+@keyframes shield-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(245, 166, 35, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 18px 4px rgba(245, 166, 35, 0.15);
+  }
+}
+
+/* Power-up — scale in with a warm glow burst */
+@keyframes power-up {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+    filter: brightness(1.4);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.04);
+    filter: brightness(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
+/* Slide in from the left */
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide in from the right */
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Badge pop — bouncy entrance with personality */
+@keyframes badge-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) rotate(-8deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.12) rotate(2deg);
+  }
+  70% {
+    transform: scale(0.95) rotate(-1deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Shimmer — light sweep for CTAs and accents */
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 100%;
+  }
+}
+
+/* Hero illustration animations (existing) */
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+
+@keyframes pulse-shield {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 0 transparent); }
+  50% { transform: scale(1.04); filter: drop-shadow(0 2px 8px rgba(74, 155, 110, 0.25)); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+@keyframes drift-left {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(-4px) translateY(-3px); }
+}
+
+@keyframes drift-right {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(4px) translateY(-3px); }
+}
+
+/* --------------------------------------------------------
+   Animation utility classes
+   -------------------------------------------------------- */
+
 .animate-fade-up {
   animation: fade-up 0.6s ease-out both;
 }
@@ -195,10 +454,219 @@ body {
   animation: fade-in 0.5s ease-out both;
 }
 
+.animate-hero-float {
+  animation: hero-float 4s ease-in-out infinite;
+}
+
+.animate-shield-pulse {
+  animation: shield-pulse 2.5s ease-in-out infinite;
+}
+
+.animate-power-up {
+  animation: power-up 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.6s ease-out both;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.6s ease-out both;
+}
+
+.animate-badge-pop {
+  animation: badge-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* Existing hero illustration animation classes */
+.animate-float-gentle {
+  animation: float-gentle 4s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 5s ease-in-out infinite;
+}
+
+.animate-pulse-shield {
+  animation: pulse-shield 3s ease-in-out infinite;
+}
+
+.animate-twinkle {
+  animation: twinkle 2.5s ease-in-out infinite;
+}
+
+.animate-twinkle-delayed {
+  animation: twinkle 3s ease-in-out 0.8s infinite;
+}
+
+.animate-drift-left {
+  animation: drift-left 6s ease-in-out infinite;
+}
+
+.animate-drift-right {
+  animation: drift-right 6s ease-in-out infinite;
+}
+
+/* Delay utilities */
 .delay-100 { animation-delay: 100ms; }
 .delay-200 { animation-delay: 200ms; }
 .delay-300 { animation-delay: 300ms; }
 .delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+
+/* --------------------------------------------------------
+   Scroll-triggered reveal utilities
+   Pair with IntersectionObserver — JS adds .ll-revealed
+   -------------------------------------------------------- */
+
+.ll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.ll-reveal.ll-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ll-reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.ll-reveal-left.ll-revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.ll-reveal-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.ll-reveal-right.ll-revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.ll-reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ll-reveal-scale.ll-revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* --------------------------------------------------------
+   Artistic effects — comic, badge, glow, halftone
+   -------------------------------------------------------- */
+
+/* Comic panel — bold outlined card with personality */
+.ll-comic-panel {
+  background: #FFFCF7;
+  border: 2.5px solid var(--ll-navy);
+  border-radius: 14px;
+  box-shadow: 4px 4px 0 var(--ll-navy);
+  transform: rotate(-0.5deg);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.ll-comic-panel:hover {
+  transform: rotate(0deg) translateY(-2px);
+  box-shadow: 6px 6px 0 var(--ll-navy);
+}
+
+/* Power glow — warm amber aura for important elements */
+.ll-power-glow {
+  box-shadow:
+    0 0 12px rgba(245, 166, 35, 0.15),
+    0 0 32px rgba(245, 166, 35, 0.08);
+}
+
+/* Hero badge — bold, confident, slightly rotated */
+.ll-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.375rem 1rem;
+  background: var(--ll-amber-light);
+  color: var(--ll-navy);
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 2px solid var(--ll-amber);
+  border-radius: 8px;
+  transform: rotate(-2deg);
+  box-shadow: 2px 2px 0 rgba(245, 166, 35, 0.3);
+}
+
+/* Sketch underline — wavy, hand-drawn feel */
+.ll-sketch-underline {
+  text-decoration: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='8' viewBox='0 0 120 8'%3E%3Cpath d='M0 5 Q10 2 20 5 T40 5 T60 5 T80 5 T100 5 T120 5' fill='none' stroke='%23F5A623' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-position: bottom left;
+  background-repeat: repeat-x;
+  background-size: 120px 8px;
+  padding-bottom: 6px;
+}
+
+/* Halftone dot overlay — comic-book texture */
+.ll-halftone {
+  position: relative;
+}
+
+.ll-halftone::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: radial-gradient(circle, var(--ll-navy) 1px, transparent 1px);
+  background-size: 8px 8px;
+  border-radius: inherit;
+}
+
+/* Manifesto / pull-quote — editorial, large italic */
+.ll-manifesto {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--ll-navy);
+  border-left: 3px solid var(--ll-amber);
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .ll-manifesto {
+    font-size: 1.875rem;
+    line-height: 1.35;
+  }
+}
+
+.ll-manifesto::before {
+  content: "\201C";
+  position: absolute;
+  top: -0.3em;
+  left: -0.05em;
+  font-size: 3em;
+  color: var(--ll-amber);
+  opacity: 0.2;
+  font-style: normal;
+  line-height: 1;
+}
 
 /* --------------------------------------------------------
    Paper grain — warm, subtle, organic
@@ -213,7 +681,14 @@ body {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.025;
+  opacity: 0.035;
   background-image:
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+  z-index: 1;
+}
+
+/* Ensure grain doesn't block content */
+.ll-grain > * {
+  position: relative;
+  z-index: 2;
 }

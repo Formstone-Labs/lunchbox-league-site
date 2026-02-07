@@ -9,7 +9,18 @@ function LunchboxLogo({ className = "h-9 w-9" }: { className?: string }) {
       className={className}
       aria-hidden="true"
     >
-      {/* Handle arch */}
+      {/* Cape flowing behind lunchbox */}
+      <path
+        d="M10 20c-3 4-5 12-4 20 3-4 6-5 9-4"
+        fill="var(--ll-coral)"
+        opacity="0.75"
+      />
+      <path
+        d="M38 20c3 4 5 12 4 20-3-4-6-5-9-4"
+        fill="var(--ll-coral)"
+        opacity="0.6"
+      />
+      {/* Handle */}
       <path
         d="M16 18C16 10 20 6 24 6C28 6 32 10 32 18"
         stroke="var(--ll-navy)"
@@ -17,20 +28,17 @@ function LunchboxLogo({ className = "h-9 w-9" }: { className?: string }) {
         strokeLinecap="round"
         fill="none"
       />
-      {/* Lunchbox body — rounded rectangle */}
-      <rect
-        x="8"
-        y="17"
-        width="32"
-        height="24"
-        rx="6"
+      {/* Lunchbox body — rounded like a shield */}
+      <path
+        d="M8 17h32v14c0 8-7 16-16 16S8 39 8 31V17Z"
         fill="var(--ll-amber)"
         stroke="var(--ll-navy)"
         strokeWidth="2.25"
+        strokeLinejoin="round"
       />
-      {/* Subtle body highlight line */}
+      {/* Lid line */}
       <path
-        d="M12 24H36"
+        d="M8 24h32"
         stroke="var(--ll-navy)"
         strokeWidth="1.5"
         strokeLinecap="round"
@@ -47,36 +55,27 @@ function LunchboxLogo({ className = "h-9 w-9" }: { className?: string }) {
         stroke="var(--ll-navy)"
         strokeWidth="2"
       />
-      {/* "LL" text inside body */}
-      <text
-        x="24"
-        y="35"
-        textAnchor="middle"
-        fontFamily="serif"
-        fontWeight="700"
-        fontSize="11"
-        fill="var(--ll-navy)"
-        letterSpacing="0.5"
-      >
-        LL
-      </text>
+      {/* Star emblem on body */}
+      <path
+        d="M24 29l1.8 3.6 4 .6-2.9 2.8.7 4L24 38l-3.6 2 .7-4-2.9-2.8 4-.6Z"
+        fill="var(--ll-cream)"
+        opacity="0.9"
+      />
     </svg>
   );
 }
 
 export default function Nav() {
   return (
-    <nav
-      className="sticky top-0 z-50 border-b backdrop-blur-md"
-      style={{
-        borderColor: "var(--ll-border)",
-        backgroundColor: "rgba(255, 248, 240, 0.85)",
-      }}
-    >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
+    <nav className="sticky top-0 z-50 backdrop-blur-md">
+      <div
+        className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3"
+      >
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5">
-          <LunchboxLogo />
+        <Link href="/" className="group flex items-center gap-2.5">
+          <div className="transition-transform duration-200 group-hover:rotate-[-4deg] group-hover:scale-105">
+            <LunchboxLogo />
+          </div>
           <span
             className="text-base font-semibold tracking-tight"
             style={{
@@ -92,21 +91,21 @@ export default function Nav() {
         <div className="hidden items-center gap-1 md:flex">
           <Link
             href="#how-it-works"
-            className="px-4 py-2 text-sm font-medium transition-colors"
+            className="rounded-lg px-4 py-2 text-sm font-medium transition-colors hover:bg-[var(--ll-amber-light)]"
             style={{ color: "var(--ll-navy)" }}
           >
             How It Works
           </Link>
           <Link
             href="#features"
-            className="px-4 py-2 text-sm font-medium transition-colors"
+            className="rounded-lg px-4 py-2 text-sm font-medium transition-colors hover:bg-[var(--ll-amber-light)]"
             style={{ color: "var(--ll-navy)" }}
           >
             Features
           </Link>
           <Link
             href="#faq"
-            className="px-4 py-2 text-sm font-medium transition-colors"
+            className="rounded-lg px-4 py-2 text-sm font-medium transition-colors hover:bg-[var(--ll-amber-light)]"
             style={{ color: "var(--ll-navy)" }}
           >
             FAQ
@@ -115,9 +114,19 @@ export default function Nav() {
 
         {/* CTA */}
         <Link href="#cta" className="ll-btn-primary text-sm">
-          Join the Waitlist
+          Join the League
         </Link>
       </div>
+
+      {/* Warm accent line */}
+      <div
+        className="h-[2px] w-full"
+        style={{
+          background:
+            "linear-gradient(90deg, transparent 0%, var(--ll-amber) 20%, var(--ll-coral) 50%, var(--ll-amber) 80%, transparent 100%)",
+          opacity: 0.35,
+        }}
+      />
     </nav>
   );
 }

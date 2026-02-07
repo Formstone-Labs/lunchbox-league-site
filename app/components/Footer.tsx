@@ -9,7 +9,18 @@ function LunchboxLogo({ className = "h-9 w-9" }: { className?: string }) {
       className={className}
       aria-hidden="true"
     >
-      {/* Handle arch */}
+      {/* Cape flowing behind lunchbox */}
+      <path
+        d="M10 20c-3 4-5 12-4 20 3-4 6-5 9-4"
+        fill="var(--ll-coral)"
+        opacity="0.75"
+      />
+      <path
+        d="M38 20c3 4 5 12 4 20-3-4-6-5-9-4"
+        fill="var(--ll-coral)"
+        opacity="0.6"
+      />
+      {/* Handle */}
       <path
         d="M16 18C16 10 20 6 24 6C28 6 32 10 32 18"
         stroke="var(--ll-navy)"
@@ -17,20 +28,17 @@ function LunchboxLogo({ className = "h-9 w-9" }: { className?: string }) {
         strokeLinecap="round"
         fill="none"
       />
-      {/* Lunchbox body — rounded rectangle */}
-      <rect
-        x="8"
-        y="17"
-        width="32"
-        height="24"
-        rx="6"
+      {/* Lunchbox body — rounded like a shield */}
+      <path
+        d="M8 17h32v14c0 8-7 16-16 16S8 39 8 31V17Z"
         fill="var(--ll-amber)"
         stroke="var(--ll-navy)"
         strokeWidth="2.25"
+        strokeLinejoin="round"
       />
-      {/* Subtle body highlight line */}
+      {/* Lid line */}
       <path
-        d="M12 24H36"
+        d="M8 24h32"
         stroke="var(--ll-navy)"
         strokeWidth="1.5"
         strokeLinecap="round"
@@ -47,19 +55,12 @@ function LunchboxLogo({ className = "h-9 w-9" }: { className?: string }) {
         stroke="var(--ll-navy)"
         strokeWidth="2"
       />
-      {/* "LL" text inside body */}
-      <text
-        x="24"
-        y="35"
-        textAnchor="middle"
-        fontFamily="serif"
-        fontWeight="700"
-        fontSize="11"
-        fill="var(--ll-navy)"
-        letterSpacing="0.5"
-      >
-        LL
-      </text>
+      {/* Star emblem on body */}
+      <path
+        d="M24 29l1.8 3.6 4 .6-2.9 2.8.7 4L24 38l-3.6 2 .7-4-2.9-2.8 4-.6Z"
+        fill="var(--ll-cream)"
+        opacity="0.9"
+      />
     </svg>
   );
 }
@@ -91,10 +92,10 @@ export default function Footer() {
               </span>
             </Link>
             <p
-              className="mt-3 max-w-xs text-sm"
+              className="mt-3 max-w-xs text-sm leading-relaxed"
               style={{ color: "var(--ll-muted)" }}
             >
-              Allergy safety, made simple.
+              Protecting tiny heroes, one lunchbox at a time.
             </p>
           </div>
 
@@ -124,9 +125,21 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Solidarity line */}
+        <p
+          className="mt-8 text-center text-sm italic"
+          style={{
+            fontFamily: "var(--font-display)",
+            color: "var(--ll-navy)",
+            opacity: 0.4,
+          }}
+        >
+          Every kid deserves a league.
+        </p>
+
         {/* Bottom: copyright */}
         <div
-          className="mt-10 border-t pt-6 text-center text-xs"
+          className="mt-6 border-t pt-6 text-center text-xs"
           style={{
             borderColor: "var(--ll-border)",
             color: "var(--ll-muted)",

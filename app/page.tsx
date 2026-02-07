@@ -1,6 +1,5 @@
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
-import AllergyStats from "./components/AllergyStats";
 import Problem from "./components/Problem";
 import HowItWorks from "./components/HowItWorks";
 import Features from "./components/Features";
@@ -16,7 +15,6 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <AllergyStats />
         <Problem />
         <HowItWorks />
         <Features />
