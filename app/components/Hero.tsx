@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pt-36 pb-28 md:pt-48 md:pb-40">
+    <section className="relative overflow-hidden pt-36 pb-20 md:pt-48 md:pb-28">
       {/* Background — layered radial energy */}
       <div
         className="pointer-events-none absolute inset-0"
@@ -16,19 +16,14 @@ export default function Hero() {
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_auto] lg:gap-20">
           {/* --- Text column --- */}
           <div className="max-w-2xl">
-            {/* Eyebrow */}
+            {/* Eyebrow — editorial small-caps line */}
             <p
-              className="animate-fade-up mb-6 inline-flex items-center gap-2.5 rounded-full px-4 py-1.5 text-[0.6875rem] font-semibold uppercase tracking-[0.1em]"
+              className="animate-fade-up mb-6 text-[0.6875rem] font-semibold uppercase tracking-[0.18em]"
               style={{
-                background: "rgba(253, 243, 224, 0.7)",
-                color: "var(--ll-navy)",
-                border: "1px solid rgba(232, 168, 73, 0.35)",
+                color: "var(--ll-muted)",
+                fontFamily: "var(--font-body)",
               }}
             >
-              <span
-                className="inline-block h-1.5 w-1.5 rounded-full"
-                style={{ background: "var(--ll-sage)" }}
-              />
               Built by allergy parents, for allergy parents
             </p>
 
@@ -36,40 +31,27 @@ export default function Hero() {
               className="animate-fade-up delay-100"
               style={{
                 fontFamily: "var(--font-display)",
-                fontSize: "clamp(3rem, 6vw, 4.75rem)",
-                lineHeight: 1.05,
+                fontSize: "clamp(2.75rem, 5.5vw, 4.5rem)",
+                lineHeight: 1.08,
                 letterSpacing: "-0.025em",
                 fontWeight: 800,
                 color: "var(--ll-navy)",
               }}
             >
-              Every kid deserves
+              Let them be a kid.
               <br />
-              a{" "}
-              <span
-                style={{ color: "var(--ll-coral)" }}
-              >
-                league
+              <span style={{ color: "var(--ll-coral)" }}>
+                We&rsquo;ll handle the allergy part.
               </span>
-              .
             </h1>
 
             <p
               className="animate-fade-up delay-200 mt-8 text-base leading-[1.75] md:text-[1.1875rem] md:leading-[1.75]"
-              style={{ color: "var(--ll-muted)" }}
+              style={{ color: "var(--ll-ink)", opacity: 0.75 }}
             >
-              Your kid shouldn&apos;t have to sit out birthday parties or skip
-              the field trip. Lunchbox League arms your whole
-              village&nbsp;&mdash; teachers, coaches, grandparents&nbsp;&mdash; with
-              the safety cards and emergency plans that let your child live
-              full-volume.
-            </p>
-
-            <p
-              className="animate-fade-up delay-300 mt-4 text-sm font-medium italic"
-              style={{ color: "var(--ll-navy)", opacity: 0.55 }}
-            >
-              Because every kid deserves a league in their corner.
+              Share the safety card and action plan with every adult who
+              matters&mdash;so your child can go to the party, the field trip,
+              the sleepover.
             </p>
 
             <div className="animate-fade-up delay-300 mt-12 flex flex-wrap items-center gap-4">
@@ -82,9 +64,30 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* --- Illustration column --- */}
+          {/* --- Product-as-hero: Safety card mock --- */}
           <div className="animate-fade-up delay-300 flex justify-center lg:justify-end">
-            <HeroIllustration />
+            <ProductCardHero />
+          </div>
+        </div>
+
+        {/* --- Secondary supporting line — intentional, not a paragraph --- */}
+        <div className="animate-fade-up delay-400 mt-16 md:mt-20">
+          <div className="mx-auto max-w-3xl flex flex-col items-center gap-2 text-center">
+            <p
+              className="text-sm font-semibold tracking-[0.04em] md:text-base"
+              style={{
+                fontFamily: "var(--font-display)",
+                color: "var(--ll-navy)",
+              }}
+            >
+              Allergy safety that travels with your kid.
+            </p>
+            <p
+              className="text-sm md:text-[0.9375rem]"
+              style={{ color: "var(--ll-muted)" }}
+            >
+              No binders. No buried texts. Just the plan&mdash;always available.
+            </p>
           </div>
         </div>
       </div>
@@ -93,211 +96,236 @@ export default function Hero() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  Inline SVG - heroic lunchbox shield with whimsical doodles        */
+/*  Product-as-hero: clean, elevated safety card mock                 */
 /* ------------------------------------------------------------------ */
 
-function HeroIllustration() {
+function ProductCardHero() {
   return (
-    <svg
-      width="400"
-      height="400"
-      viewBox="0 0 400 400"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-      className="w-[320px] md:w-[400px]"
-    >
-      {/* ---- Ambient glow behind lunchbox ---- */}
-      <ellipse cx="200" cy="200" rx="140" ry="120" fill="#E8A849" opacity="0.06" />
-      <ellipse cx="200" cy="200" rx="90" ry="80" fill="#E8A849" opacity="0.05" />
+    <div className="relative w-[300px] md:w-[340px]">
+      {/* Ambient glow */}
+      <div
+        className="pointer-events-none absolute -inset-8 rounded-3xl"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, rgba(124, 154, 130, 0.12) 0%, transparent 70%)",
+        }}
+      />
 
-      {/* ---- Soft ground shadow ---- */}
-      <ellipse cx="200" cy="360" rx="120" ry="12" fill="#DDE5DE" opacity="0.4" />
-
-      {/* ---- Cape billowing behind ---- */}
-      <g className="animate-float-slow">
-        <path
-          d="M80 140c-20 30-35 80-28 140 8-12 18-16 28-14"
-          fill="#E05252"
-          opacity="0.7"
-        />
-        <path
-          d="M74 150c-18 28-30 72-24 128 6-10 14-14 22-12"
-          fill="#E05252"
-          opacity="0.35"
-        />
-        <path
-          d="M320 140c20 30 35 80 28 140-8-12-18-16-28-14"
-          fill="#E05252"
-          opacity="0.55"
-        />
-        <path
-          d="M326 150c18 28 30 72 24 128-6-10-14-14-22-12"
-          fill="#E05252"
-          opacity="0.25"
-        />
-      </g>
-
-      {/* ---- Main lunchbox body — shield-shaped bottom ---- */}
-      <g className="animate-float-gentle">
-        {/* Body — flat top, shield-pointed bottom */}
-        <path
-          d="M80 130h240v100c0 40-50 95-120 95S80 270 80 230V130Z"
-          fill="#E8A849"
-          stroke="#2C3E2D"
-          strokeWidth="3.5"
-          strokeLinejoin="round"
-        />
-
-        {/* Lid area highlight */}
-        <rect x="105" y="145" width="190" height="5" rx="2.5" fill="#FDF3E0" opacity="0.55" />
-
-        {/* Lid line */}
-        <path
-          d="M80 170h240"
-          stroke="#2C3E2D"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-        />
-
-        {/* Handle */}
-        <path
-          d="M152 130 Q152 80 200 80 Q248 80 248 130"
-          stroke="#2C3E2D"
-          strokeWidth="6"
-          strokeLinecap="round"
-          fill="none"
-        />
-        <path
-          d="M160 125 Q160 88 200 88 Q240 88 240 125"
-          stroke="#3D5240"
-          strokeWidth="1.8"
-          strokeLinecap="round"
-          fill="none"
-          opacity="0.2"
-        />
-
-        {/* Clasp */}
-        <rect x="180" y="158" width="40" height="24" rx="8" fill="#2C3E2D" />
-        <circle cx="200" cy="170" r="5" fill="#F7F4EE" />
-
-        {/* ---- Central shield emblem ---- */}
-        <g className="animate-pulse-shield" style={{ transformOrigin: "200px 245px" }}>
-          {/* Shield glow */}
-          <path
-            d="M165 205 Q200 185 235 205 L235 260 Q200 290 165 260 Z"
-            fill="#7C9A82"
-            opacity="0.12"
-            transform="scale(1.08) translate(-16, -20)"
-          />
-          {/* Shield shape */}
-          <path
-            d="M170 210 Q200 192 230 210 L230 258 Q200 286 170 258 Z"
-            fill="#7C9A82"
-            stroke="#2C3E2D"
-            strokeWidth="2.5"
-            strokeLinejoin="round"
-          />
-          {/* Inner border */}
-          <path
-            d="M178 216 Q200 202 222 216 L222 252 Q200 276 178 252 Z"
+      {/* Card */}
+      <div
+        className="relative overflow-hidden rounded-2xl"
+        style={{
+          background: "#FDFCF8",
+          border: "1px solid rgba(221, 229, 222, 0.7)",
+          boxShadow:
+            "0 2px 8px rgba(44, 62, 45, 0.05), 0 12px 40px rgba(44, 62, 45, 0.08), 0 0 0 1px rgba(221, 229, 222, 0.3)",
+        }}
+      >
+        {/* Card header */}
+        <div
+          className="flex items-center gap-3 px-5 py-4"
+          style={{ background: "var(--ll-sage-light)" }}
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 22 22"
             fill="none"
-            stroke="#F7F4EE"
-            strokeWidth="1"
-            opacity="0.35"
+            aria-hidden="true"
+          >
+            <path
+              d="M11 2L4 5.5V10.5C4 15.2 7 18.8 11 20C15 18.8 18 15.2 18 10.5V5.5L11 2Z"
+              fill="var(--ll-sage)"
+              fillOpacity="0.15"
+              stroke="var(--ll-sage)"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M8 11.5L10 13.5L14.5 8.5"
+              stroke="var(--ll-sage)"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          <span
+            className="text-sm font-semibold"
+            style={{
+              fontFamily: "var(--font-display)",
+              color: "var(--ll-navy)",
+            }}
+          >
+            Allergy Safety Card
+          </span>
+        </div>
+
+        {/* Card body */}
+        <div className="px-5 py-5 space-y-4">
+          {/* Child info row */}
+          <div className="flex items-center gap-3">
+            <div
+              className="flex h-9 w-9 items-center justify-center rounded-full text-sm font-bold text-white"
+              style={{ background: "var(--ll-navy)" }}
+            >
+              E
+            </div>
+            <div>
+              <span
+                className="block text-sm font-semibold"
+                style={{ color: "var(--ll-navy)" }}
+              >
+                Emma, age 7
+              </span>
+              <span
+                className="block text-xs"
+                style={{ color: "var(--ll-muted)" }}
+              >
+                Lincoln Elementary — Mrs. Chen&apos;s class
+              </span>
+            </div>
+          </div>
+
+          {/* Allergen tags */}
+          <div className="flex flex-wrap gap-1.5">
+            <span
+              className="rounded-full px-2.5 py-0.5 text-[11px] font-semibold"
+              style={{
+                background: "var(--ll-coral-light)",
+                color: "var(--ll-coral)",
+              }}
+            >
+              🥜 Peanut
+            </span>
+            <span
+              className="rounded-full px-2.5 py-0.5 text-[11px] font-semibold"
+              style={{
+                background: "var(--ll-coral-light)",
+                color: "var(--ll-coral)",
+              }}
+            >
+              🌰 Tree Nut
+            </span>
+            <span
+              className="rounded-full px-2.5 py-0.5 text-[11px] font-semibold"
+              style={{
+                background: "var(--ll-amber-light)",
+                color: "var(--ll-navy)",
+              }}
+            >
+              Sesame
+            </span>
+          </div>
+
+          {/* Divider */}
+          <div
+            className="h-px w-full"
+            style={{ background: "var(--ll-border)", opacity: 0.5 }}
           />
-          {/* Star inside shield */}
-          <path
-            d="M200 222l4.5 9 10 1.5-7.2 7 1.7 10-9-4.7-9 4.7 1.7-10-7.2-7 10-1.5Z"
-            fill="#F7F4EE"
-            opacity="0.9"
-          />
-        </g>
 
-        {/* Bottom accent */}
-        <path
-          d="M120 280 Q200 282 280 280"
-          stroke="#2C3E2D"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          opacity="0.06"
-          fill="none"
-        />
-      </g>
+          {/* Emergency action */}
+          <div>
+            <p
+              className="text-[11px] font-semibold uppercase tracking-[0.08em] mb-2"
+              style={{ color: "var(--ll-muted)" }}
+            >
+              If exposed
+            </p>
+            <div
+              className="flex items-start gap-2.5 rounded-lg px-3 py-2.5 text-xs leading-snug"
+              style={{
+                background: "var(--ll-coral-light)",
+                color: "var(--ll-ink)",
+              }}
+            >
+              <span className="shrink-0 mt-0.5">💉</span>
+              <span>
+                <strong>Administer EpiPen</strong> immediately.
+                <br />
+                EpiPen location: backpack front pocket.
+              </span>
+            </div>
+          </div>
 
-      {/* ---- Allergen tags floating around ---- */}
-      <g className="animate-drift-left">
-        <rect x="10" y="120" width="68" height="28" rx="14" fill="#E05252" stroke="#2C3E2D" strokeWidth="1.8" />
-        <text x="44" y="139" textAnchor="middle" fill="#F7F4EE" fontSize="11" fontWeight="600" fontFamily="var(--font-body)">Peanut</text>
-        <path d="M78 134 Q92 140 100 148" stroke="#2C3E2D" strokeWidth="1" strokeDasharray="3 3" fill="none" opacity="0.25" strokeLinecap="round" />
-      </g>
+          {/* Emergency contacts */}
+          <div className="space-y-1.5">
+            <div
+              className="flex items-center gap-2 rounded-lg px-3 py-2 text-xs"
+              style={{ background: "var(--ll-cream-dark)" }}
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2.5 2h3l1 3-1.5 1a7.5 7.5 0 003 3l1-1.5 3 1v3a1 1 0 01-1 1A10 10 0 011.5 3a1 1 0 011-1z"
+                  stroke="var(--ll-muted)"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <span style={{ color: "var(--ll-ink)" }}>
+                <strong>Mom</strong> — (555) 012-3456
+              </span>
+            </div>
+            <div
+              className="flex items-center gap-2 rounded-lg px-3 py-2 text-xs"
+              style={{ background: "var(--ll-cream-dark)" }}
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2.5 2h3l1 3-1.5 1a7.5 7.5 0 003 3l1-1.5 3 1v3a1 1 0 01-1 1A10 10 0 011.5 3a1 1 0 011-1z"
+                  stroke="var(--ll-muted)"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <span style={{ color: "var(--ll-ink)" }}>
+                <strong>Dad</strong> — (555) 012-7890
+              </span>
+            </div>
+          </div>
+        </div>
 
-      <g className="animate-drift-right">
-        <rect x="310" y="100" width="76" height="28" rx="14" fill="#E05252" stroke="#2C3E2D" strokeWidth="1.8" />
-        <text x="348" y="119" textAnchor="middle" fill="#F7F4EE" fontSize="11" fontWeight="600" fontFamily="var(--font-body)">Tree Nut</text>
-        <path d="M310 118 Q298 128 292 140" stroke="#2C3E2D" strokeWidth="1" strokeDasharray="3 3" fill="none" opacity="0.25" strokeLinecap="round" />
-      </g>
-
-      <g className="animate-float-slow" style={{ animationDelay: "1s" }}>
-        <rect x="332" y="225" width="54" height="28" rx="14" fill="#E05252" stroke="#2C3E2D" strokeWidth="1.8" />
-        <text x="359" y="244" textAnchor="middle" fill="#F7F4EE" fontSize="11" fontWeight="600" fontFamily="var(--font-body)">Dairy</text>
-      </g>
-
-      {/* ---- Doodle: checklist card ---- */}
-      <g transform="translate(8, 200)" opacity="0.85" className="animate-float-slow" style={{ animationDelay: "2s" }}>
-        <rect width="42" height="52" rx="6" fill="#F7F4EE" stroke="#2C3E2D" strokeWidth="1.8" />
-        <line x1="12" y1="14" x2="34" y2="14" stroke="#DDE5DE" strokeWidth="1.5" strokeLinecap="round" />
-        <line x1="12" y1="22" x2="30" y2="22" stroke="#DDE5DE" strokeWidth="1.5" strokeLinecap="round" />
-        <line x1="12" y1="30" x2="32" y2="30" stroke="#DDE5DE" strokeWidth="1.5" strokeLinecap="round" />
-        <line x1="12" y1="38" x2="26" y2="38" stroke="#DDE5DE" strokeWidth="1.5" strokeLinecap="round" />
-        <path d="M8 12l2 3 4-5" stroke="#7C9A82" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-        <path d="M8 20l2 3 4-5" stroke="#7C9A82" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-        <path d="M8 28l2 3 4-5" stroke="#7C9A82" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-      </g>
-
-      {/* ---- Stars ---- */}
-      <g transform="translate(130, 40)" className="animate-twinkle">
-        <path d="M10 0L12.5 7 20 7 14 11.5 16.5 19 10 14 3.5 19 6 11.5 0 7 7.5 7Z" fill="#E8A849" stroke="#2C3E2D" strokeWidth="1.5" strokeLinejoin="round" />
-      </g>
-      <g transform="translate(275, 55)" className="animate-twinkle-delayed">
-        <path d="M6 0L7.5 4.5 12 4.5 8.5 7 10 11.5 6 8.5 2 11.5 3.5 7 0 4.5 4.5 4.5Z" fill="#E8A849" stroke="#2C3E2D" strokeWidth="1.2" strokeLinejoin="round" />
-      </g>
-      <g transform="translate(355, 175)" className="animate-twinkle" style={{ animationDelay: "0.7s" }}>
-        <path d="M5 0L6.2 3.8 10 3.8 7 6 8 10 5 7.5 2 10 3 6 0 3.8 3.8 3.8Z" fill="#E8A849" opacity="0.6" />
-      </g>
-
-      {/* ---- Lightning bolts ---- */}
-      <g transform="translate(356, 148)" opacity="0.75">
-        <path d="M8 0L4 10 9 10 5 20" stroke="#E8A849" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-      </g>
-      <g transform="translate(48, 80)" opacity="0.55">
-        <path d="M6 0L3 7 7 7 4 14" stroke="#E8A849" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-      </g>
-
-      {/* ---- Floating hearts ---- */}
-      <g transform="translate(350, 280)" className="animate-float-gentle" style={{ animationDelay: "0.5s" }}>
-        <path d="M10 17C-3 8 0 0 10 5 20 0 23 8 10 17Z" fill="#E05252" stroke="#2C3E2D" strokeWidth="1.2" strokeLinejoin="round" opacity="0.7" />
-      </g>
-      <g transform="translate(240, 32)" className="animate-float-slow" style={{ animationDelay: "1.5s" }}>
-        <path d="M6 10C-1 5 0 0 6 3 12 0 13 5 6 10Z" fill="#E05252" stroke="#2C3E2D" strokeWidth="1" strokeLinejoin="round" opacity="0.5" />
-      </g>
-
-      {/* ---- Small plus signs ---- */}
-      <g transform="translate(48, 300)" opacity="0.45">
-        <line x1="0" y1="7" x2="14" y2="7" stroke="#6B9FCA" strokeWidth="2.5" strokeLinecap="round" />
-        <line x1="7" y1="0" x2="7" y2="14" stroke="#6B9FCA" strokeWidth="2.5" strokeLinecap="round" />
-      </g>
-      <g transform="translate(165, 52)" opacity="0.3">
-        <line x1="0" y1="5" x2="10" y2="5" stroke="#6B9FCA" strokeWidth="1.8" strokeLinecap="round" />
-        <line x1="5" y1="0" x2="5" y2="10" stroke="#6B9FCA" strokeWidth="1.8" strokeLinecap="round" />
-      </g>
-
-      {/* ---- Tiny dots ---- */}
-      <circle cx="125" cy="68" r="2.5" fill="#6B9FCA" opacity="0.4" />
-      <circle cx="338" cy="160" r="2" fill="#E8A849" opacity="0.4" />
-      <circle cx="40" cy="165" r="2" fill="#7C9A82" opacity="0.3" />
-      <circle cx="375" cy="310" r="2.5" fill="#6B9FCA" opacity="0.3" />
-      <circle cx="80" cy="330" r="2" fill="#E8A849" opacity="0.35" />
-    </svg>
+        {/* Card footer — shared status */}
+        <div
+          className="flex items-center justify-center gap-2 px-5 py-3"
+          style={{
+            background: "var(--ll-sage)",
+          }}
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M3.5 8.5l3 3 6-6"
+              stroke="white"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          <span className="text-xs font-semibold text-white">
+            Shared with 4 caregivers
+          </span>
+        </div>
+      </div>
+    </div>
   );
 }

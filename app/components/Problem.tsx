@@ -41,7 +41,7 @@ export default function Problem() {
 
             <p
               className="mt-6 text-base leading-[1.8] md:text-lg md:leading-[1.8]"
-              style={{ color: "var(--ll-muted)" }}
+              style={{ color: "var(--ll-ink)" }}
             >
               You&apos;ve been doing all of this alone, with paper forms that get
               lost, text messages that get buried, and a knot in your stomach
