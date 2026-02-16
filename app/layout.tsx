@@ -20,6 +20,11 @@ export const metadata: Metadata = {
   title: "Lunchbox League — Allergy safety made simple for school",
   description:
     "The app that helps parents share their child's food allergies, emergency plans, and safety info with teachers and caregivers — clearly and instantly.",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
