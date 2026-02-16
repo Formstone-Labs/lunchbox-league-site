@@ -163,38 +163,20 @@ export default function CTA() {
           </p>
         </div>
 
-        {/* Email signup form */}
-        <form
-          action="mailto:hello@lunchboxleague.com"
-          method="GET"
-          className="mx-auto mt-10 flex max-w-md flex-col gap-3 sm:flex-row animate-fade-up delay-100"
-        >
-          <input type="hidden" name="subject" value="Lunchbox League — early access" />
-          <input
-            type="email"
-            name="body"
-            placeholder="Your email address"
-            required
-            aria-label="Email address"
-            className="flex-1 rounded-2xl border bg-white px-5 py-3.5 text-[0.9375rem] outline-none transition-all placeholder:opacity-40 focus:ring-2"
-            style={{
-              borderColor: "rgba(221, 229, 222, 0.6)",
-              color: "var(--ll-ink)",
-              boxShadow: "0 2px 8px rgba(44, 62, 45, 0.04)",
-              // @ts-expect-error CSS custom property
-              "--tw-ring-color": "var(--ll-amber)",
-            }}
-          />
-          <button type="submit" className="ll-btn-hero whitespace-nowrap">
-            Join the League
-          </button>
-        </form>
+        <div className="mx-auto mt-10 flex max-w-2xl flex-wrap items-center justify-center gap-4 animate-fade-up delay-100">
+          <a href="https://app.lunchboxleague.com" className="ll-btn-hero">
+            Open the App
+          </a>
+          <a href="/sample-passport" className="ll-btn-secondary">
+            View Sample Passport
+          </a>
+        </div>
 
         <p
-          className="mt-4 text-xs animate-fade-up delay-200"
+          className="mx-auto mt-5 max-w-2xl text-xs animate-fade-up delay-200"
           style={{ color: "var(--ll-muted)" }}
         >
-          We only send the good stuff. Promise.
+          The website passport is a fictional sample preview. For real profiles, real caregivers, and real child safety data, open the app.
         </p>
       </div>
     </section>

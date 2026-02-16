@@ -116,6 +116,13 @@ export default function Nav() {
           >
             FAQ
           </Link>
+          <Link
+            href="/sample-passport"
+            className="rounded-lg px-4 py-2 text-sm font-medium transition-colors hover:bg-[var(--ll-amber-light)]"
+            style={{ color: "var(--ll-navy)" }}
+          >
+            View Sample Passport
+          </Link>
         </div>
 
         {/* CTA */}

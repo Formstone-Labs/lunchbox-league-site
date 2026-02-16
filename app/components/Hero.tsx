@@ -58,10 +58,14 @@ export default function Hero() {
               <Link href="https://app.lunchboxleague.com" className="ll-btn-hero">
                 Open the App
               </Link>
-              <Link href="#how-it-works" className="ll-btn-secondary">
-                See how it works
+              <Link href="/sample-passport" className="ll-btn-secondary">
+                View Sample Passport
               </Link>
             </div>
+
+            <p className="animate-fade-up delay-400 mt-4 text-sm" style={{ color: "var(--ll-muted)" }}>
+              The sample passport is a public preview with fictional details. The app is where families manage real accounts and real child data.
+            </p>
           </div>
 
           {/* --- Product-as-hero: Safety card mock --- */}
