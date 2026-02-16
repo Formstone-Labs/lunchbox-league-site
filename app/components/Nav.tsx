@@ -119,8 +119,8 @@ export default function Nav() {
         </div>
 
         {/* CTA */}
-        <Link href="#cta" className="ll-btn-primary text-sm">
-          Join the League
+        <Link href="https://app.lunchboxleague.com" className="ll-btn-primary text-sm">
+          Open the App
         </Link>
       </div>
 

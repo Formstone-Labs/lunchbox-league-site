@@ -55,8 +55,8 @@ export default function Hero() {
             </p>
 
             <div className="animate-fade-up delay-300 mt-12 flex flex-wrap items-center gap-4">
-              <Link href="#cta" className="ll-btn-hero">
-                Join the League
+              <Link href="https://app.lunchboxleague.com" className="ll-btn-hero">
+                Open the App
               </Link>
               <Link href="#how-it-works" className="ll-btn-secondary">
                 See how it works
