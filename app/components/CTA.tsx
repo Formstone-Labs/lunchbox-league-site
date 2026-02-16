@@ -2,9 +2,21 @@ export default function CTA() {
   return (
     <section
       id="cta"
-      className="relative overflow-hidden py-24 md:py-32"
-      style={{ background: "var(--ll-amber-light)" }}
+      className="relative overflow-hidden py-28 md:py-36"
+      style={{
+        background: "linear-gradient(180deg, var(--ll-amber-light) 0%, rgba(253, 243, 224, 0.5) 100%)",
+      }}
     >
+      {/* Soft curve at top for organic transition */}
+      <div
+        className="pointer-events-none absolute -top-px left-0 w-full"
+        aria-hidden="true"
+      >
+        <svg viewBox="0 0 1440 40" fill="none" className="block w-full" preserveAspectRatio="none" style={{ height: "40px" }}>
+          <path d="M0 40V20C360 0 1080 0 1440 20V40H0Z" fill="var(--ll-cream)" />
+        </svg>
+      </div>
+
       {/* ------------------------------------------------
           Decorative elements -- scattered hero doodles
           ------------------------------------------------ */}
@@ -164,15 +176,16 @@ export default function CTA() {
             placeholder="Your email address"
             required
             aria-label="Email address"
-            className="flex-1 rounded-xl border bg-white px-5 py-3.5 text-[0.9375rem] outline-none transition-shadow placeholder:opacity-50 focus:ring-2"
+            className="flex-1 rounded-2xl border bg-white px-5 py-3.5 text-[0.9375rem] outline-none transition-all placeholder:opacity-40 focus:ring-2"
             style={{
-              borderColor: "var(--ll-border)",
+              borderColor: "rgba(221, 229, 222, 0.6)",
               color: "var(--ll-ink)",
+              boxShadow: "0 2px 8px rgba(44, 62, 45, 0.04)",
               // @ts-expect-error CSS custom property
               "--tw-ring-color": "var(--ll-amber)",
             }}
           />
-          <button type="submit" className="ll-btn-primary whitespace-nowrap">
+          <button type="submit" className="ll-btn-hero whitespace-nowrap">
             Join the League
           </button>
         </form>

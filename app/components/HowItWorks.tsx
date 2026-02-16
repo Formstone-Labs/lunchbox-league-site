@@ -1,6 +1,12 @@
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="ll-section">
+    <section
+      id="how-it-works"
+      className="ll-section"
+      style={{
+        background: "linear-gradient(180deg, var(--ll-cream) 0%, rgba(253, 243, 224, 0.2) 50%, var(--ll-cream) 100%)",
+      }}
+    >
       <div className="mx-auto max-w-6xl px-5">
         {/* ── Header ── */}
         <div className="mx-auto max-w-2xl text-center animate-fade-up">

@@ -60,13 +60,13 @@ body {
    -------------------------------------------------------- */
 
 .ll-section {
-  padding: 5rem 0;
+  padding: 6rem 0;
   position: relative;
 }
 
 @media (min-width: 768px) {
   .ll-section {
-    padding: 7rem 0;
+    padding: 9rem 0;
   }
 }
 
@@ -77,13 +77,13 @@ body {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: min(80%, 600px);
+  width: min(50%, 320px);
   height: 1px;
   background: linear-gradient(
     90deg,
     transparent,
-    var(--ll-border) 25%,
-    var(--ll-border) 75%,
+    rgba(221, 229, 222, 0.5) 30%,
+    rgba(221, 229, 222, 0.5) 70%,
     transparent
   );
 }
@@ -94,18 +94,19 @@ body {
 
 .ll-card {
   background: #FDFCF8;
-  border: 1.5px solid var(--ll-border);
-  border-radius: 16px;
+  border: 1px solid rgba(221, 229, 222, 0.55);
+  border-radius: 20px;
   box-shadow:
-    0 1px 3px rgba(44, 62, 45, 0.04),
-    0 8px 24px rgba(44, 62, 45, 0.03);
-  transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+    0 1px 2px rgba(44, 62, 45, 0.03),
+    0 4px 16px rgba(44, 62, 45, 0.04),
+    0 20px 48px rgba(44, 62, 45, 0.025);
+  transition: box-shadow 0.35s ease, transform 0.35s ease, border-color 0.35s ease;
 }
 
 .ll-card-hover:hover {
   box-shadow:
     0 4px 12px rgba(232, 168, 73, 0.08),
-    0 20px 48px rgba(44, 62, 45, 0.10);
+    0 24px 56px rgba(44, 62, 45, 0.10);
   transform: translateY(-5px);
   border-color: rgba(232, 168, 73, 0.3);
 }
@@ -235,18 +236,18 @@ body {
   justify-content: center;
   gap: 0.5rem;
   padding: 0.875rem 2rem;
-  background: var(--ll-amber-light);
+  background: transparent;
   color: var(--ll-navy);
   font-weight: 600;
   font-size: 0.9375rem;
   border-radius: 12px;
-  border: 1.5px solid var(--ll-amber);
-  transition: all 0.2s ease;
+  border: 1.5px solid var(--ll-border);
+  transition: all 0.25s ease;
 }
 
 .ll-btn-secondary:hover {
-  background: var(--ll-amber);
-  color: white;
+  background: var(--ll-cream-dark);
+  border-color: var(--ll-amber);
   transform: translateY(-1px);
 }
 
@@ -256,17 +257,19 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 1rem 2.25rem;
+  padding: 1.125rem 2.5rem;
   background: linear-gradient(135deg, var(--ll-amber) 0%, var(--ll-coral) 100%);
   color: white;
   font-weight: 700;
-  font-size: 1rem;
-  border-radius: 14px;
+  font-size: 1.0625rem;
+  letter-spacing: 0.01em;
+  border-radius: 16px;
   border: none;
   transition: all 0.3s ease;
   box-shadow:
     0 2px 8px rgba(224, 82, 82, 0.2),
-    0 8px 24px rgba(232, 168, 73, 0.15);
+    0 8px 24px rgba(232, 168, 73, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
   position: relative;
   overflow: hidden;
 }
@@ -275,7 +278,8 @@ body {
   transform: translateY(-2px) scale(1.02);
   box-shadow:
     0 4px 16px rgba(224, 82, 82, 0.3),
-    0 12px 32px rgba(232, 168, 73, 0.2);
+    0 12px 32px rgba(232, 168, 73, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .ll-btn-hero:active {
@@ -681,7 +685,7 @@ body {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.035;
+  opacity: 0.045;
   background-image:
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
   z-index: 1;

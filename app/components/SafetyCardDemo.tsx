@@ -3,8 +3,28 @@ export default function SafetyCardDemo() {
     <section
       id="safety"
       className="ll-section relative overflow-hidden"
-      style={{ background: "var(--ll-navy)" }}
+      style={{ background: "var(--ll-navy)", paddingTop: "7rem", paddingBottom: "7rem" }}
     >
+      {/* Soft curve at top for organic transition */}
+      <div
+        className="pointer-events-none absolute -top-px left-0 w-full"
+        aria-hidden="true"
+      >
+        <svg viewBox="0 0 1440 48" fill="none" className="block w-full" preserveAspectRatio="none" style={{ height: "48px" }}>
+          <path d="M0 48V24C360 0 1080 0 1440 24V48H0Z" fill="var(--ll-cream)" />
+        </svg>
+      </div>
+
+      {/* Soft curve at bottom */}
+      <div
+        className="pointer-events-none absolute -bottom-px left-0 w-full"
+        aria-hidden="true"
+      >
+        <svg viewBox="0 0 1440 48" fill="none" className="block w-full" preserveAspectRatio="none" style={{ height: "48px" }}>
+          <path d="M0 0V24C360 48 1080 48 1440 24V0H0Z" fill="var(--ll-cream)" />
+        </svg>
+      </div>
+
       {/* Comic-book dot pattern background */}
       <div
         className="pointer-events-none absolute inset-0"

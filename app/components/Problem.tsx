@@ -1,6 +1,11 @@
 export default function Problem() {
   return (
-    <section className="ll-section">
+    <section
+      className="ll-section"
+      style={{
+        background: "linear-gradient(180deg, var(--ll-cream) 0%, rgba(239, 245, 240, 0.35) 50%, var(--ll-cream) 100%)",
+      }}
+    >
       <div className="mx-auto max-w-6xl px-5">
         {/* Section heading */}
         <h2 className="ll-heading-lg animate-fade-up">

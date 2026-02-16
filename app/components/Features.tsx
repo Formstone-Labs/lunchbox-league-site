@@ -110,21 +110,27 @@ function FeatureCard({
 }) {
   const c = colorMap[color] ?? colorMap.amber;
   return (
-    <div className="animate-fade-up ll-card group flex gap-5 p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(45,42,38,0.06)]">
+    <div className="animate-fade-up ll-card group relative overflow-hidden p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(45,42,38,0.06)]">
+      {/* Accent top bar */}
       <div
-        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl transition-transform duration-300 group-hover:scale-105"
+        className="absolute top-0 left-0 h-[3px] w-full"
+        style={{
+          background: `linear-gradient(90deg, ${c.border}, transparent)`,
+          opacity: 0.5,
+        }}
+      />
+      <div
+        className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl transition-transform duration-300 group-hover:scale-105"
         style={{ background: c.bg }}
       >
         {icon}
       </div>
-      <div>
-        <h3 className="font-[family-name:var(--font-display)] text-base font-bold text-[var(--ll-navy)]">
-          {title}
-        </h3>
-        <p className="mt-1.5 text-sm leading-relaxed text-[var(--ll-muted)]">
-          {description}
-        </p>
-      </div>
+      <h3 className="font-[family-name:var(--font-display)] text-[1.0625rem] font-bold text-[var(--ll-navy)]">
+        {title}
+      </h3>
+      <p className="mt-2 text-sm leading-[1.7] text-[var(--ll-muted)]">
+        {description}
+      </p>
     </div>
   );
 }

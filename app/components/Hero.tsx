@@ -2,13 +2,13 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pt-28 pb-20 md:pt-36 md:pb-28">
-      {/* Background action lines — subtle radial energy */}
+    <section className="relative overflow-hidden pt-36 pb-28 md:pt-48 md:pb-40">
+      {/* Background — layered radial energy */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 60% 50% at 70% 40%, rgba(232, 168, 73, 0.06) 0%, transparent 70%)",
+            "radial-gradient(ellipse 70% 60% at 75% 35%, rgba(232, 168, 73, 0.05) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 20% 70%, rgba(124, 154, 130, 0.04) 0%, transparent 60%)",
         }}
       />
 
@@ -18,11 +18,11 @@ export default function Hero() {
           <div className="max-w-2xl">
             {/* Eyebrow */}
             <p
-              className="animate-fade-up mb-4 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-wider"
+              className="animate-fade-up mb-6 inline-flex items-center gap-2.5 rounded-full px-4 py-1.5 text-[0.6875rem] font-semibold uppercase tracking-[0.1em]"
               style={{
-                background: "var(--ll-amber-light)",
+                background: "rgba(253, 243, 224, 0.7)",
                 color: "var(--ll-navy)",
-                border: "1px solid var(--ll-amber)",
+                border: "1px solid rgba(232, 168, 73, 0.35)",
               }}
             >
               <span
@@ -36,10 +36,10 @@ export default function Hero() {
               className="animate-fade-up delay-100"
               style={{
                 fontFamily: "var(--font-display)",
-                fontSize: "clamp(2.5rem, 5.5vw, 4rem)",
-                lineHeight: 1.08,
-                letterSpacing: "-0.02em",
-                fontWeight: 700,
+                fontSize: "clamp(3rem, 6vw, 4.75rem)",
+                lineHeight: 1.05,
+                letterSpacing: "-0.025em",
+                fontWeight: 800,
                 color: "var(--ll-navy)",
               }}
             >
@@ -55,7 +55,7 @@ export default function Hero() {
             </h1>
 
             <p
-              className="animate-fade-up delay-200 mt-7 text-base leading-relaxed md:text-lg md:leading-relaxed"
+              className="animate-fade-up delay-200 mt-8 text-base leading-[1.75] md:text-[1.1875rem] md:leading-[1.75]"
               style={{ color: "var(--ll-muted)" }}
             >
               Your kid shouldn&apos;t have to sit out birthday parties or skip
@@ -66,14 +66,14 @@ export default function Hero() {
             </p>
 
             <p
-              className="animate-fade-up delay-300 mt-3 text-sm font-medium italic"
-              style={{ color: "var(--ll-navy)", opacity: 0.6 }}
+              className="animate-fade-up delay-300 mt-4 text-sm font-medium italic"
+              style={{ color: "var(--ll-navy)", opacity: 0.55 }}
             >
               Because every kid deserves a league in their corner.
             </p>
 
-            <div className="animate-fade-up delay-300 mt-10 flex flex-wrap items-center gap-4">
-              <Link href="#cta" className="ll-btn-primary">
+            <div className="animate-fade-up delay-300 mt-12 flex flex-wrap items-center gap-4">
+              <Link href="#cta" className="ll-btn-hero">
                 Join the League
               </Link>
               <Link href="#how-it-works" className="ll-btn-secondary">

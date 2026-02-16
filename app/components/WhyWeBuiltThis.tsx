@@ -15,7 +15,7 @@ export default function WhyWeBuiltThis() {
           </p>
         </div>
 
-        <div className="mt-12 grid items-start gap-12 lg:grid-cols-[1fr_auto] lg:gap-20">
+        <div className="mt-14 grid items-start gap-12 lg:grid-cols-[1fr_auto] lg:gap-20">
           {/* ---- Manifesto text column ---- */}
           <div className="max-w-2xl animate-fade-up delay-100">
             <div

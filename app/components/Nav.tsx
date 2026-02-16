@@ -69,7 +69,10 @@ export default function Nav() {
   return (
     <nav
       className="sticky top-0 z-50 backdrop-blur-md"
-      style={{ background: "rgba(247, 244, 238, 0.82)" }}
+      style={{
+        background: "rgba(247, 244, 238, 0.85)",
+        boxShadow: "0 1px 3px rgba(44, 62, 45, 0.04), 0 4px 12px rgba(44, 62, 45, 0.02)",
+      }}
     >
       <div
         className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3"
@@ -123,11 +126,11 @@ export default function Nav() {
 
       {/* Warm accent line */}
       <div
-        className="h-[2px] w-full"
+        className="h-px w-full"
         style={{
           background:
-            "linear-gradient(90deg, transparent 0%, var(--ll-amber) 20%, var(--ll-coral) 50%, var(--ll-amber) 80%, transparent 100%)",
-          opacity: 0.35,
+            "linear-gradient(90deg, transparent 0%, var(--ll-amber) 25%, var(--ll-coral) 50%, var(--ll-amber) 75%, transparent 100%)",
+          opacity: 0.2,
         }}
       />
     </nav>

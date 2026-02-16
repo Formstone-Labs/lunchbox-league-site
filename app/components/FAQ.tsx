@@ -27,7 +27,13 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section id="faq" className="ll-section">
+    <section
+      id="faq"
+      className="ll-section"
+      style={{
+        background: "linear-gradient(180deg, var(--ll-cream) 0%, rgba(239, 245, 240, 0.3) 50%, var(--ll-cream) 100%)",
+      }}
+    >
       <div className="mx-auto max-w-3xl px-5">
         {/* Header */}
         <div className="text-center animate-fade-up">
@@ -41,7 +47,7 @@ export default function FAQ() {
         </div>
 
         {/* Accordion */}
-        <div className="mt-12 flex flex-col gap-3">
+        <div className="mt-12 flex flex-col gap-4">
           {faqs.map((faq) => (
             <details
               key={faq.q}

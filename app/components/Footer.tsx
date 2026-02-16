@@ -68,13 +68,11 @@ function LunchboxLogo({ className = "h-9 w-9" }: { className?: string }) {
 export default function Footer() {
   return (
     <footer
-      className="border-t"
       style={{
-        borderColor: "var(--ll-border)",
         backgroundColor: "var(--ll-cream)",
       }}
     >
-      <div className="mx-auto max-w-6xl px-5 py-12 md:py-16">
+      <div className="mx-auto max-w-6xl px-5 pt-14 pb-12 md:pt-20 md:pb-16">
         {/* Top section */}
         <div className="flex flex-col items-start gap-8 md:flex-row md:items-start md:justify-between">
           {/* Logo + tagline */}
