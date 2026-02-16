@@ -4,22 +4,19 @@ export default function Features() {
       <div className="mx-auto max-w-5xl px-5">
         {/* ── Header ── */}
         <div className="mx-auto max-w-2xl text-center animate-fade-up">
-          <p className="text-sm font-semibold uppercase tracking-widest text-[var(--ll-sage)]">
-            Powers &amp; Abilities
-          </p>
-          <h2 className="mt-3 ll-heading-lg">
-            Every hero needs their gear.
+          <h2 className="ll-heading-lg">
+            What if they could just…<br />be a kid?
           </h2>
         </div>
 
-        {/* ── Feature grid — clean 2-column ── */}
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
+        {/* ── Superpower cards ── */}
+        <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 
-          {/* ── 1. The Shield ── */}
+          {/* ── 1. Invisible Armor ── */}
           <FeatureCard
             color="amber"
-            title="The Shield"
-            description="Your child's allergy profile forged into one powerful, shareable safety card. Allergens, severity, medications, emergency contacts — readable at a glance."
+            title="Invisible Armor"
+            description="Your kid walks into any room protected. Every adult who matters has the plan — not a binder in a drawer, a living shield that travels with them."
             icon={
               <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
                 <path d="M5 7Q14 2 23 7L23 17Q14 26 5 17Z" stroke="var(--ll-amber)" strokeWidth="2" fill="none" strokeLinejoin="round" />
@@ -28,70 +25,38 @@ export default function Features() {
             }
           />
 
-          {/* ── 2. The Signal ── */}
+          {/* ── 2. The Whole Village ── */}
           <FeatureCard
             color="sky"
-            title="The Signal"
-            description="Send the Shield to anyone who needs it. Teachers, nurses, coaches — one tap and your whole squad is briefed and ready."
+            title="The Whole Village"
+            description="Teachers, coaches, grandparents, the new babysitter — everyone on the same page, instantly. No more 9pm phone calls about cupcake ingredients."
             icon={
               <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                <path d="M7 10Q14 4 21 10" stroke="var(--ll-sky)" strokeWidth="2" strokeLinecap="round" fill="none" />
-                <path d="M10 14Q14 9 18 14" stroke="var(--ll-sky)" strokeWidth="2" strokeLinecap="round" fill="none" />
-                <circle cx="14" cy="17" r="2" fill="var(--ll-sky)" />
+                <circle cx="10" cy="9" r="4" stroke="var(--ll-sky)" strokeWidth="1.8" fill="none" />
+                <path d="M3 22c0-4.5 3-7.5 7-7.5s7 3 7 7.5" stroke="var(--ll-sky)" strokeWidth="1.8" strokeLinecap="round" fill="none" />
+                <circle cx="19" cy="11" r="3.5" stroke="var(--ll-sky)" strokeWidth="1.8" fill="var(--ll-sky-light)" />
+                <path d="M13 24c0-3.5 2.5-6 6-6s6 2.5 6 6" stroke="var(--ll-sky)" strokeWidth="1.8" strokeLinecap="round" fill="none" />
               </svg>
             }
           />
 
-          {/* ── 3. Battle Plan ── */}
+          {/* ── 3. Fearless Field Trips ── */}
           <FeatureCard
             color="coral"
-            title="Battle Plan"
-            description="Your emergency action plan — pinned, printable, high-contrast. When seconds matter, big type and zero ambiguity could save a life."
+            title="Fearless Field Trips"
+            description="Sleepovers. Birthday parties. Camp. The moments that used to terrify you become the adventures they deserve."
             icon={
               <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                <rect x="5" y="2" width="18" height="24" rx="3" stroke="var(--ll-coral)" strokeWidth="2" fill="none" />
-                <path d="M14 9L19 18H9Z" stroke="var(--ll-coral)" strokeWidth="1.8" strokeLinejoin="round" fill="none" />
-                <line x1="14" y1="12" x2="14" y2="14.5" stroke="var(--ll-coral)" strokeWidth="1.8" strokeLinecap="round" />
-                <circle cx="14" cy="16.5" r="0.8" fill="var(--ll-coral)" />
+                <path d="M14 4l3 6h6l-5 4 2 7-6-4-6 4 2-7-5-4h6z" stroke="var(--ll-coral)" strokeWidth="1.8" strokeLinejoin="round" fill="none" />
               </svg>
             }
           />
 
-          {/* ── 4. Morning Mission ── */}
-          <FeatureCard
-            color="sage"
-            title="Morning Mission"
-            description="Fifteen seconds every morning. Safe snack packed? Label verified? Medication confirmed? A daily power-up that sends your kid out the door ready for anything."
-            icon={
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                <rect x="4" y="5" width="20" height="20" rx="4" stroke="var(--ll-sage)" strokeWidth="2" fill="none" />
-                <rect x="10" y="2" width="8" height="5" rx="2.5" stroke="var(--ll-sage)" strokeWidth="1.5" fill="var(--ll-sage-light)" />
-                <path d="M9 13l2 2 4-5" stroke="var(--ll-sage)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-                <path d="M9 20l2 2 4-5" stroke="var(--ll-sage)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-              </svg>
-            }
-          />
-
-          {/* ── 5. The Roster ── */}
-          <FeatureCard
-            color="amber"
-            title="The Roster"
-            description="One account, your whole family. Every child gets their own Shield, their own squad, their own story."
-            icon={
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                <circle cx="10" cy="9" r="4" stroke="var(--ll-amber)" strokeWidth="1.8" fill="none" />
-                <path d="M3 22c0-4.5 3-7.5 7-7.5s7 3 7 7.5" stroke="var(--ll-amber)" strokeWidth="1.8" strokeLinecap="round" fill="none" />
-                <circle cx="19" cy="11" r="3.5" stroke="var(--ll-amber)" strokeWidth="1.8" fill="var(--ll-amber-light)" />
-                <path d="M13 24c0-3.5 2.5-6 6-6s6 2.5 6 6" stroke="var(--ll-amber)" strokeWidth="1.8" strokeLinecap="round" fill="none" />
-              </svg>
-            }
-          />
-
-          {/* ── 6. Stealth Mode ── */}
+          {/* ── 4. Always Ready ── */}
           <FeatureCard
             color="navy"
-            title="Stealth Mode"
-            description="No signal? No problem. Shields and Battle Plans are cached for offline access — always ready, always on duty."
+            title="Always Ready"
+            description="Offline. At 2am. In the school cafeteria with no signal. The plan is always one tap away."
             icon={
               <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
                 <path d="M4 11c5.5-5 14.5-5 20 0" stroke="var(--ll-navy)" strokeWidth="2" strokeLinecap="round" fill="none" opacity="0.25" />
@@ -99,6 +64,20 @@ export default function Features() {
                 <circle cx="14" cy="20" r="2" fill="var(--ll-navy)" opacity="0.25" />
                 <line x1="5" y1="5" x2="23" y2="23" stroke="var(--ll-navy)" strokeWidth="2" strokeLinecap="round" opacity="0.5" />
                 <path d="M18 21l2.5 2.5 5-5.5" stroke="var(--ll-sage)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+              </svg>
+            }
+          />
+
+          {/* ── 5. Know the Enemy ── */}
+          <FeatureCard
+            color="sage"
+            title="Know the Enemy"
+            description="Scan any label, any menu. In seconds, not minutes. No more squinting at ingredient lists at midnight."
+            icon={
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="7" stroke="var(--ll-sage)" strokeWidth="2" fill="none" />
+                <line x1="17" y1="17" x2="24" y2="24" stroke="var(--ll-sage)" strokeWidth="2.5" strokeLinecap="round" />
+                <path d="M9 12h6M12 9v6" stroke="var(--ll-sage)" strokeWidth="1.5" strokeLinecap="round" />
               </svg>
             }
           />
@@ -131,7 +110,7 @@ function FeatureCard({
 }) {
   const c = colorMap[color] ?? colorMap.amber;
   return (
-    <div className="animate-fade-up ll-card group flex gap-5 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(45,42,38,0.06)]">
+    <div className="animate-fade-up ll-card group flex gap-5 p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(45,42,38,0.06)]">
       <div
         className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl transition-transform duration-300 group-hover:scale-105"
         style={{ background: c.bg }}
