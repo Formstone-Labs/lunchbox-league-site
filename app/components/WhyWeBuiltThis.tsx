@@ -220,7 +220,7 @@ function WhyIllustration() {
       </g>
 
       {/* Soft ground shadow */}
-      <ellipse cx="125" cy="285" rx="95" ry="10" fill="#E8E0D8" opacity="0.5" />
+      <ellipse cx="125" cy="285" rx="95" ry="10" fill="#DDE5DE" opacity="0.5" />
 
       {/* ---- Parent figure ---- */}
       {/* Head */}

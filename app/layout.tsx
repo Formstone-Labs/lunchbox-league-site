@@ -1,38 +1,19 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Nunito, Inter } from "next/font/google";
 import "./globals.css";
 
-const playfair = localFont({
-  src: "../node_modules/@fontsource-variable/playfair-display/files/playfair-display-latin-wght-normal.woff2",
+const nunito = Nunito({
+  subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
+  weight: ["400", "600", "700", "800"],
 });
 
-const dmSans = localFont({
-  src: [
-    {
-      path: "../node_modules/@fontsource/dm-sans/files/dm-sans-latin-400-normal.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../node_modules/@fontsource/dm-sans/files/dm-sans-latin-500-normal.woff2",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../node_modules/@fontsource/dm-sans/files/dm-sans-latin-600-normal.woff2",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "../node_modules/@fontsource/dm-sans/files/dm-sans-latin-700-normal.woff2",
-      weight: "700",
-      style: "normal",
-    },
-  ],
+const inter = Inter({
+  subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -47,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${nunito.variable} ${inter.variable}`}>
       <body className="min-h-dvh antialiased ll-grain" style={{ fontFamily: 'var(--font-body)' }}>
         {children}
       </body>

@@ -4,26 +4,26 @@
   /* === Lunchbox League — Warm, Human Design System === */
 
   /* Core palette */
-  --ll-cream: #FFF8F0;
-  --ll-cream-dark: #F3EBE1;
-  --ll-navy: #1B2D4F;
-  --ll-navy-light: #2A4170;
-  --ll-amber: #F5A623;
-  --ll-amber-light: #FFF3DC;
-  --ll-coral: #E8573A;
-  --ll-coral-light: #FDEBE7;
-  --ll-sage: #4A9B6E;
-  --ll-sage-light: #E8F5ED;
-  --ll-sky: #6CB4D9;
-  --ll-sky-light: #E7F3FB;
-  --ll-ink: #2D2A26;
-  --ll-muted: #8A8580;
-  --ll-border: #E8E0D8;
+  --ll-cream: #F7F4EE;
+  --ll-cream-dark: #EDE8E0;
+  --ll-navy: #2C3E2D;
+  --ll-navy-light: #3D5240;
+  --ll-amber: #E8A849;
+  --ll-amber-light: #FDF3E0;
+  --ll-coral: #E05252;
+  --ll-coral-light: #FDE8E8;
+  --ll-sage: #7C9A82;
+  --ll-sage-light: #EFF5F0;
+  --ll-sky: #6B9FCA;
+  --ll-sky-light: #EBF2F8;
+  --ll-ink: #2C3E2D;
+  --ll-muted: #7A8A7C;
+  --ll-border: #DDE5DE;
 
   /* Semantic */
-  --ll-danger: #D93025;
+  --ll-danger: #E05252;
   --ll-caution: #D4940A;
-  --ll-safe: #2D8E5E;
+  --ll-safe: #4CAF7D;
 }
 
 /* --------------------------------------------------------
@@ -51,7 +51,7 @@ body {
 :focus-visible {
   outline: 2px solid var(--ll-amber);
   outline-offset: 3px;
-  box-shadow: 0 0 0 5px rgba(245, 166, 35, 0.18);
+  box-shadow: 0 0 0 5px rgba(232, 168, 73, 0.18);
   border-radius: 4px;
 }
 
@@ -93,21 +93,21 @@ body {
    -------------------------------------------------------- */
 
 .ll-card {
-  background: #FFFCF7;
+  background: #FDFCF8;
   border: 1.5px solid var(--ll-border);
   border-radius: 16px;
   box-shadow:
-    0 1px 3px rgba(45, 42, 38, 0.04),
-    0 8px 24px rgba(45, 42, 38, 0.03);
+    0 1px 3px rgba(44, 62, 45, 0.04),
+    0 8px 24px rgba(44, 62, 45, 0.03);
   transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
 }
 
 .ll-card-hover:hover {
   box-shadow:
-    0 4px 12px rgba(245, 166, 35, 0.08),
-    0 20px 48px rgba(45, 42, 38, 0.10);
+    0 4px 12px rgba(232, 168, 73, 0.08),
+    0 20px 48px rgba(44, 62, 45, 0.10);
   transform: translateY(-5px);
-  border-color: rgba(245, 166, 35, 0.3);
+  border-color: rgba(232, 168, 73, 0.3);
 }
 
 /* --------------------------------------------------------
@@ -213,7 +213,7 @@ body {
   font-size: 0.9375rem;
   border-radius: 12px;
   transition: all 0.25s ease;
-  box-shadow: 0 2px 8px rgba(27, 45, 79, 0.2);
+  box-shadow: 0 2px 8px rgba(44, 62, 45, 0.2);
   position: relative;
 }
 
@@ -221,8 +221,8 @@ body {
   background: var(--ll-navy-light);
   transform: translateY(-2px);
   box-shadow:
-    0 4px 16px rgba(27, 45, 79, 0.25),
-    0 0 20px rgba(245, 166, 35, 0.15);
+    0 4px 16px rgba(44, 62, 45, 0.25),
+    0 0 20px rgba(232, 168, 73, 0.15);
 }
 
 .ll-btn-primary:active {
@@ -265,8 +265,8 @@ body {
   border: none;
   transition: all 0.3s ease;
   box-shadow:
-    0 2px 8px rgba(232, 87, 58, 0.2),
-    0 8px 24px rgba(245, 166, 35, 0.15);
+    0 2px 8px rgba(224, 82, 82, 0.2),
+    0 8px 24px rgba(232, 168, 73, 0.15);
   position: relative;
   overflow: hidden;
 }
@@ -274,8 +274,8 @@ body {
 .ll-btn-hero:hover {
   transform: translateY(-2px) scale(1.02);
   box-shadow:
-    0 4px 16px rgba(232, 87, 58, 0.3),
-    0 12px 32px rgba(245, 166, 35, 0.2);
+    0 4px 16px rgba(224, 82, 82, 0.3),
+    0 12px 32px rgba(232, 168, 73, 0.2);
 }
 
 .ll-btn-hero:active {
@@ -332,10 +332,10 @@ body {
 /* Shield pulse — protective glow that breathes */
 @keyframes shield-pulse {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(245, 166, 35, 0.25);
+    box-shadow: 0 0 0 0 rgba(232, 168, 73, 0.25);
   }
   50% {
-    box-shadow: 0 0 18px 4px rgba(245, 166, 35, 0.15);
+    box-shadow: 0 0 18px 4px rgba(232, 168, 73, 0.15);
   }
 }
 
@@ -424,7 +424,7 @@ body {
 
 @keyframes pulse-shield {
   0%, 100% { transform: scale(1); filter: drop-shadow(0 0 0 transparent); }
-  50% { transform: scale(1.04); filter: drop-shadow(0 2px 8px rgba(74, 155, 110, 0.25)); }
+  50% { transform: scale(1.04); filter: drop-shadow(0 2px 8px rgba(124, 154, 130, 0.25)); }
 }
 
 @keyframes twinkle {
@@ -570,7 +570,7 @@ body {
 
 /* Comic panel — bold outlined card with personality */
 .ll-comic-panel {
-  background: #FFFCF7;
+  background: #FDFCF8;
   border: 2.5px solid var(--ll-navy);
   border-radius: 14px;
   box-shadow: 4px 4px 0 var(--ll-navy);
@@ -588,8 +588,8 @@ body {
 /* Power glow — warm amber aura for important elements */
 .ll-power-glow {
   box-shadow:
-    0 0 12px rgba(245, 166, 35, 0.15),
-    0 0 32px rgba(245, 166, 35, 0.08);
+    0 0 12px rgba(232, 168, 73, 0.15),
+    0 0 32px rgba(232, 168, 73, 0.08);
 }
 
 /* Hero badge — bold, confident, slightly rotated */
@@ -607,13 +607,13 @@ body {
   border: 2px solid var(--ll-amber);
   border-radius: 8px;
   transform: rotate(-2deg);
-  box-shadow: 2px 2px 0 rgba(245, 166, 35, 0.3);
+  box-shadow: 2px 2px 0 rgba(232, 168, 73, 0.3);
 }
 
 /* Sketch underline — wavy, hand-drawn feel */
 .ll-sketch-underline {
   text-decoration: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='8' viewBox='0 0 120 8'%3E%3Cpath d='M0 5 Q10 2 20 5 T40 5 T60 5 T80 5 T100 5 T120 5' fill='none' stroke='%23F5A623' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='8' viewBox='0 0 120 8'%3E%3Cpath d='M0 5 Q10 2 20 5 T40 5 T60 5 T80 5 T100 5 T120 5' fill='none' stroke='%23E8A849' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
   background-position: bottom left;
   background-repeat: repeat-x;
   background-size: 120px 8px;

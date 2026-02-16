@@ -62,7 +62,7 @@ export default function Problem() {
                   aria-hidden="true"
                 >
                   {/* Panel background */}
-                  <rect width="280" height="200" fill="#FFFCF7" />
+                  <rect width="280" height="200" fill="#FDFCF8" />
 
                   {/* Action lines radiating from center — comic style chaos */}
                   <g opacity="0.08">

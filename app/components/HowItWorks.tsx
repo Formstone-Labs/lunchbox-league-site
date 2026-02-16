@@ -342,7 +342,7 @@ function AssembleLeagueVisual() {
         {/* ── Central shield card ── */}
         <rect
           x="104" y="84" width="72" height="72" rx="16"
-          fill="#FFFCF7"
+          fill="#FDFCF8"
           stroke="var(--ll-navy)"
           strokeWidth="2"
         />

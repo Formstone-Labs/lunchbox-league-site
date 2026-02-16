@@ -69,7 +69,7 @@ export default function Nav() {
   return (
     <nav
       className="sticky top-0 z-50 backdrop-blur-md"
-      style={{ background: "rgba(255, 248, 240, 0.82)" }}
+      style={{ background: "rgba(247, 244, 238, 0.82)" }}
     >
       <div
         className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3"
