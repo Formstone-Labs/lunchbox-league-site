@@ -11,14 +11,14 @@ export default function HowItWorks() {
         {/* ── Header ── */}
         <div className="mx-auto max-w-2xl text-center animate-fade-up">
           <p className="text-sm font-semibold uppercase tracking-widest text-[var(--ll-coral)]">
-            The Origin Story
+            Getting Started
           </p>
           <h2 className="mt-3 ll-heading-lg">
-            How heroes are made.
+            How we make that possible.
           </h2>
           <p className="mt-4 text-base leading-relaxed text-[var(--ll-muted)]">
-            Every great hero has an origin story. Yours starts right here,
-            right now, in about two minutes flat.
+            Three steps. About two minutes. And your kid walks out the door
+            protected.
           </p>
         </div>
 
@@ -145,7 +145,7 @@ export default function HowItWorks() {
         {/* ── Closing tagline ── */}
         <div className="animate-fade-up delay-400 mt-20 text-center">
           <p className="font-[family-name:var(--font-display)] text-lg font-bold text-[var(--ll-navy)] md:text-xl">
-            Origin story complete. Time to fly.
+            That&apos;s it. You&apos;re ready.
           </p>
           <div className="mx-auto mt-3 flex items-center justify-center gap-1.5">
             <svg width="20" height="2" viewBox="0 0 20 2" aria-hidden="true">

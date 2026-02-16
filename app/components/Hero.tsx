@@ -178,12 +178,6 @@ function ProductCardHero() {
               >
                 Emma, age 7
               </span>
-              <span
-                className="block text-xs"
-                style={{ color: "var(--ll-muted)" }}
-              >
-                Lincoln Elementary — Mrs. Chen&apos;s class
-              </span>
             </div>
           </div>
 
@@ -196,7 +190,7 @@ function ProductCardHero() {
                 color: "var(--ll-coral)",
               }}
             >
-              🥜 Peanut
+              Peanut
             </span>
             <span
               className="rounded-full px-2.5 py-0.5 text-[11px] font-semibold"
@@ -205,7 +199,7 @@ function ProductCardHero() {
                 color: "var(--ll-coral)",
               }}
             >
-              🌰 Tree Nut
+              Tree Nut
             </span>
             <span
               className="rounded-full px-2.5 py-0.5 text-[11px] font-semibold"
@@ -250,52 +244,42 @@ function ProductCardHero() {
 
           {/* Emergency contacts */}
           <div className="space-y-1.5">
-            <div
-              className="flex items-center gap-2 rounded-lg px-3 py-2 text-xs"
-              style={{ background: "var(--ll-cream-dark)" }}
-            >
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 14 14"
-                fill="none"
-                aria-hidden="true"
+            {[
+              { label: "Mom", number: "(555) 012-3456" },
+              { label: "Dad", number: "(555) 012-7890" },
+            ].map((contact) => (
+              <div
+                key={contact.label}
+                className="flex items-center gap-2 rounded-lg px-3 py-2 text-xs"
+                style={{ background: "var(--ll-cream-dark)" }}
               >
-                <path
-                  d="M2.5 2h3l1 3-1.5 1a7.5 7.5 0 003 3l1-1.5 3 1v3a1 1 0 01-1 1A10 10 0 011.5 3a1 1 0 011-1z"
-                  stroke="var(--ll-muted)"
-                  strokeWidth="1.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <span style={{ color: "var(--ll-ink)" }}>
-                <strong>Mom</strong> — (555) 012-3456
-              </span>
-            </div>
-            <div
-              className="flex items-center gap-2 rounded-lg px-3 py-2 text-xs"
-              style={{ background: "var(--ll-cream-dark)" }}
-            >
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 14 14"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M2.5 2h3l1 3-1.5 1a7.5 7.5 0 003 3l1-1.5 3 1v3a1 1 0 01-1 1A10 10 0 011.5 3a1 1 0 011-1z"
-                  stroke="var(--ll-muted)"
-                  strokeWidth="1.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <span style={{ color: "var(--ll-ink)" }}>
-                <strong>Dad</strong> — (555) 012-7890
-              </span>
-            </div>
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                  aria-hidden="true"
+                  className="shrink-0"
+                >
+                  <path
+                    d="M2.5 2h3l1 3-1.5 1a7.5 7.5 0 003 3l1-1.5 3 1v3a1 1 0 01-1 1A10 10 0 011.5 3a1 1 0 011-1z"
+                    stroke="var(--ll-muted)"
+                    strokeWidth="1.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <span
+                  className="inline-block w-8 font-bold"
+                  style={{ color: "var(--ll-ink)" }}
+                >
+                  {contact.label}
+                </span>
+                <span style={{ color: "var(--ll-ink)", fontVariantNumeric: "tabular-nums" }}>
+                  {contact.number}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
 
